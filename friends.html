@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="containter">
+        <h1>Friends...</h1>
+        <br>
+        <!--wtf form specifies POST method automagically-->
+        <form acion="/friend" METHOD="POST">
+            <input type = "text" placeholder="Name" name="name">
+            <button type = "submit" value= "Add Name" class= "btn btn-secondary">submit</button>
+         </form>
+         <br>
+         {% for friend in friends %}
+            <h4>
+                {{ friend.name }}
+            </h4>
+        {% endfor %}
+    </div>
+{% endblock %}
